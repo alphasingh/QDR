@@ -15,8 +15,7 @@ public class QuestionnaireResponseService {
     private QuestionnaireResponseRepository repository;
 
     public QuestionnaireResponse saveQuestionnaire(QuestionnaireResponse toBeCreated) {
-        repository.save(toBeCreated);
-        return toBeCreated;
+        return repository.save(toBeCreated);
     }
 
     public List<QuestionnaireResponse> getAllQuestionnaire() {
