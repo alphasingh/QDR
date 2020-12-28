@@ -1,9 +1,6 @@
 package com.cambian.questionnaire.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -14,8 +11,6 @@ public class QuestionnaireResponseDto {
     private String id;
 
     private String name;
-
-    private String lname;
 
     private Integer questionCount;
 

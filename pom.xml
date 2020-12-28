@@ -27,6 +27,19 @@
             <version>1.5.2</version>
         </dependency>
 
+        <!-- Core HAPI FHIR library always required to use framework -->
+        <dependency>
+            <groupId>ca.uhn.hapi.fhir</groupId>
+            <artifactId>hapi-fhir-base</artifactId>
+            <version>5.1.0</version>
+        </dependency>
+        <!-- FHIR R4 Model Classes -->
+        <dependency>
+            <groupId>ca.uhn.hapi.fhir</groupId>
+            <artifactId>hapi-fhir-structures-r4</artifactId>
+            <version>5.1.0</version>
+        </dependency>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-mongodb</artifactId>
