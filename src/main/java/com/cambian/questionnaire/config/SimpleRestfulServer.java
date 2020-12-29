@@ -1,8 +1,8 @@
 package com.cambian.questionnaire.config;
 
 import ca.uhn.fhir.context.FhirContext;
-import ca.uhn.fhir.jpa.rp.r5.PatientResourceProvider;
 import ca.uhn.fhir.rest.server.RestfulServer;
+import com.cambian.questionnaire.resource.PatientResourceProvider;
 
 import javax.servlet.annotation.WebServlet;
 
