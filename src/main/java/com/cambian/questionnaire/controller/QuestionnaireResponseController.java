@@ -1,9 +1,12 @@
 package com.cambian.questionnaire.controller;
 
 import com.cambian.questionnaire.adapter.QuestionnaireResponseAdapter;
+import com.cambian.questionnaire.config.OpenApiDocsConfig;
 import com.cambian.questionnaire.dto.QuestionnaireResponseDto;
 import com.cambian.questionnaire.entity.QuestionnaireResponse;
 import com.cambian.questionnaire.service.QuestionnaireResponseService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,6 +22,7 @@ public class QuestionnaireResponseController {
     private QuestionnaireResponseService service;
 
     @PostMapping
+    @Operation(security = {@SecurityRequirement(name = OpenApiDocsConfig.SECURITY_KEY)})
     public ResponseEntity<QuestionnaireResponseDto> saveQuestionnaire(
             @RequestBody QuestionnaireResponseDto requestDto) {
         //QuestionnaireResponseAdapter.performValidations(requestDto);
@@ -29,6 +33,7 @@ public class QuestionnaireResponseController {
     }
 
     @GetMapping
+    @Operation(security = {@SecurityRequirement(name = OpenApiDocsConfig.SECURITY_KEY)})
     public ResponseEntity<Collection<QuestionnaireResponseDto>> getAllQuestionnaire() {
         final Collection<QuestionnaireResponseDto> responseDtoCollection
                 = QuestionnaireResponseAdapter.adaptCollection(service.getAllQuestionnaire());

@@ -11,6 +11,7 @@ import org.springframework.security.oauth2.config.annotation.web.configurers.Res
 public class ResourceServerConfiguration extends ResourceServerConfigurerAdapter {
 
     private static final String RESOURCE_ID = "";
+    private static final String[] SWAGGER_RESOURCES = {"/v3/api-docs/**", "/swagger-ui/**", "/swagger-ui.html"};
 
     @Override
     public void configure(ResourceServerSecurityConfigurer resources) throws Exception {
@@ -20,6 +21,7 @@ public class ResourceServerConfiguration extends ResourceServerConfigurerAdapter
     @Override
     public void configure(HttpSecurity http) throws Exception {
         http.cors().and().authorizeRequests()
+                .antMatchers(SWAGGER_RESOURCES).permitAll()
                 .antMatchers("/unsecure/**").permitAll()
                 .anyRequest().authenticated();
     }
