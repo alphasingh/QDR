@@ -6,7 +6,7 @@ import com.cambian.questionnaire.resource.PatientResourceProvider;
 
 import javax.servlet.annotation.WebServlet;
 
-@WebServlet("/*")
+@WebServlet(urlPatterns = {"/unsecure/*", "/*"})
 public class SimpleRestfulServer extends RestfulServer {
     @Override
     protected void initialize() {
